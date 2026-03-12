@@ -481,6 +481,18 @@ section[data-slide="6"] .col .impact-banner {
     margin-top: auto;
 }
 
+section[data-slide="7"] .two-col {
+    grid-template-columns: 1.25fr 0.75fr;
+    align-items: stretch;
+}
+
+section[data-slide="7"] .image-card {
+    aspect-ratio: 1 / 1;
+    min-height: 0;
+    width: 100%;
+    align-self: stretch;
+}
+
 @media (min-width: 1537px) {
     section[data-slide="2"] .circle-visual,
     section[data-slide="4"] .circle-visual,
@@ -616,6 +628,31 @@ section[data-slide="5"] .metric-icon {
 }
 
 section[data-slide="5"] .metric-label {
+    margin-top: clamp(0.45rem, 0.9vh, 0.8rem);
+}
+
+section[data-slide="7"] .metric {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: clamp(1.2rem, 2.2vw, 2rem);
+}
+
+section[data-slide="7"] .metric-head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(0.45rem, 0.9vw, 0.8rem);
+}
+
+section[data-slide="7"] .metric-icon {
+    width: clamp(48px, 3vw, 64px);
+    height: clamp(48px, 3vw, 64px);
+    min-width: 48px;
+    border-radius: 14px;
+}
+
+section[data-slide="7"] .metric-label {
     margin-top: clamp(0.45rem, 0.9vh, 0.8rem);
 }
 
@@ -970,6 +1007,19 @@ section[data-slide="3"] .metric-label {
     font-size: calc(var(--body-size) * 0.85);
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.6;
+    max-width: 1040px;
+}
+
+.closing-highlight {
+    margin: clamp(0.8rem, 2vh, 1.4rem) auto;
+    padding: clamp(0.8rem, 1.8vh, 1.2rem) clamp(1.4rem, 3vw, 2.4rem);
+    border: 2px solid rgba(255, 255, 255, 0.95);
+    border-radius: clamp(10px, 1.4vw, 16px);
+    color: white;
+    font-size: calc(var(--body-size) * 0.88);
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: 0.01em;
     max-width: 1040px;
 }
 
@@ -1353,9 +1403,8 @@ section[data-slide="3"] .metric-label {
                         <div class="metric-head">
                             <span class="metric-icon" aria-hidden="true">
                                 <svg viewBox="0 0 24 24">
-                                    <rect x="7" y="5" width="10" height="14" rx="2"></rect>
-                                    <path d="M9 5.5V4h6v1.5"></path>
-                                    <path d="M10 12l2 2 3-3"></path>
+                                    <circle cx="12" cy="12" r="8"></circle>
+                                    <path d="M9 12.5l2 2 4-4"></path>
                                 </svg>
                             </span>
                             <div class="metric-value">Auditable</div>
@@ -1550,25 +1599,60 @@ section[data-slide="3"] .metric-label {
                         <li>Ad-hoc strategic analysis tools</li>
                     </ul>
                 </div>
-            </div>
-            <div class="col">
                 <div class="metric-grid">
                     <div class="metric">
-                        <div class="metric-value">Daily</div>
+                        <div class="metric-head">
+                            <span class="metric-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z"></path>
+                                    <circle cx="12" cy="12" r="2.6"></circle>
+                                </svg>
+                            </span>
+                            <div class="metric-value">Daily</div>
+                        </div>
                         <div class="metric-label">Visibility into performance</div>
                     </div>
                     <div class="metric">
-                        <div class="metric-value">Early</div>
+                        <div class="metric-head">
+                            <span class="metric-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 4l8 14H4z"></path>
+                                    <path d="M12 9v4"></path>
+                                    <circle cx="12" cy="16.5" r="0.7" fill="currentColor" stroke="none"></circle>
+                                </svg>
+                            </span>
+                            <div class="metric-value">Early</div>
+                        </div>
                         <div class="metric-label">Detection of downside risk</div>
                     </div>
                     <div class="metric">
-                        <div class="metric-value">Faster</div>
+                        <div class="metric-head">
+                            <span class="metric-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M13 2L5 13h6l-1 9 9-13h-6l1-7z"></path>
+                                </svg>
+                            </span>
+                            <div class="metric-value">Faster</div>
+                        </div>
                         <div class="metric-label">Decision cycle for leaders</div>
                     </div>
                     <div class="metric">
-                        <div class="metric-value">Aligned</div>
+                        <div class="metric-head">
+                            <span class="metric-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="8"></circle>
+                                    <path d="M9 12.5l2 2 4-4"></path>
+                                </svg>
+                            </span>
+                            <div class="metric-value">Aligned</div>
+                        </div>
                         <div class="metric-label">Shared performance narrative</div>
                     </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card image-card">
+                    <img src="extracted-images/grow-chart.png" alt="Growth chart showing decision-ready performance visibility">
                 </div>
             </div>
         </div>
@@ -1676,9 +1760,10 @@ section[data-slide="3"] .metric-label {
     <div class="slide-content">
         <img src="hq-logo-full.svg" alt="Headquarters" class="closing-logo reveal">
         <h2 class="closing-title reveal reveal-delay-1">From Data to Predictable Growth</h2>
-        <p class="closing-text reveal reveal-delay-2">In a margin-sensitive cannabis market, operators need more than reporting. We build systems that deliver financial clarity.</p>
-        <p class="closing-text reveal reveal-delay-3" style="font-weight: 600;">Financial systems that help leadership move faster and decide with confidence.</p>
-        <a href="https://www.tryheadquarters.com/" class="closing-cta reveal reveal-delay-4" target="_blank" rel="noopener">Talk to an expert</a>
+        <p class="closing-text reveal reveal-delay-2">In a margin-sensitive cannabis market, operators need more than reporting.</p>
+        <div class="closing-highlight reveal reveal-delay-3">We build systems that deliver financial clarity.</div>
+        <p class="closing-text reveal reveal-delay-4" style="font-weight: 600;">Financial systems that help leadership move faster and decide with confidence.</p>
+        <a href="https://www.tryheadquarters.com/" class="closing-cta reveal reveal-delay-5" target="_blank" rel="noopener">Talk to an expert</a>
     </div>
 </section>
 
